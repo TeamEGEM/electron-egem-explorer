@@ -12,3 +12,9 @@ var balance2 = web3.fromWei(web3.eth.getBalance("0x0666bf13ab1902de7dee4f8193c81
 var balance3 = web3.fromWei(web3.eth.getBalance("0xcEf0890408b4FC0DC025c8F581c77383529D38B6"), "ether");
 
 var cBlock = web3.eth.blockNumber;
+
+function watchBalance() {
+    var x = document.querySelector('[name="addressInput"]').value;
+    var uBalance = web3.fromWei(web3.eth.getBalance(x), "ether");
+    document.getElementById('balance').innerText = 'Balance: ' + uBalance;
+}

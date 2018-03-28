@@ -2,22 +2,32 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>EGEM Explorer</title>
+  <title>EtherGem Dev Funds</title>
   <script src="web3.min.js"></script>
   <script src="EGEM.web3.js"></script>
 </head>
 <body>
-  <div id="app" class="container" style="display: none;">
-
-  </div>
-  <div>
-    Dev Fund Address Balances:</br></br>
-    Riddlez: <script type="text/javascript">document.write(balance0)</script></br>
-    Oz: <script type="text/javascript">document.write(balance1)</script></br>
-    Osoese: <script type="text/javascript">document.write(balance2)</script></br>
-    Jal: <script type="text/javascript">document.write(balance3)</script>
+  <div class="container">
+    <img src="imgs/egemlogosmall.png"></img></br>
+    <span class="title">Dev Funds:</span></br></br>
+    <span class="title">Riddlez666:</span> <script type="text/javascript">document.write(balance0)</script></br>
+    <span class="title">MakeMoneyOz:</span> <script type="text/javascript">document.write(balance1)</script></br>
+    <span class="title">Osoese:</span> <script type="text/javascript">document.write(balance2)</script></br>
+    <span class="title">Jal3Inc:</span> <script type="text/javascript">document.write(balance3)</script>
     </br></br></br>
-    Current Block:<script type="text/javascript">document.write(cBlock)</script>
+    Current Block:<span class="title"><script type="text/javascript">document.write(cBlock)</script></span>
+    </br></br>
+    <input type="button" value="Reload Data" onClick="window.location.reload()">
+  </div>
+  <div class="container2">
+    <h1>Query Balance</h1>
+    <div id="addressInput">
+    Address: <input type="text" name="addressInput">
+    <button type="button" onClick="watchBalance();">Query</button>
+    <div></div>
+    </br>
+    <div id="balance"></div>
+    </div>
   </div>
   <script src="app.js"></script>
 </body>

@@ -1,7 +1,7 @@
 {
-  "name": "electron-block-explorer-egem",
-  "productName": "EGEM-Explorer",
-  "description": "Block explorer and more for EtherGem.",
+  "name": "electron-egem-dev-watch",
+  "productName": "EtherGem Dev Funds",
+  "description": "See the dev funds and watch balances.",
   "version": "0.0.1",
   "private": true,
   "author": "riddlez666 <ridz@egem.io>",

@@ -7,7 +7,7 @@ import path from "path";
 import url from "url";
 import { app, Menu } from "electron";
 import { devMenuTemplate } from "./menu/dev_menu_template";
-import { editMenuTemplate } from "./menu/edit_menu_template";
+import { mainMenuTemplate } from "./menu/main_menu_template";
 import createWindow from "./helpers/window";
 
 // Special module holding environment variables which you declared
@@ -15,7 +15,7 @@ import createWindow from "./helpers/window";
 import env from "env";
 
 const setApplicationMenu = () => {
-  const menus = [editMenuTemplate];
+  const menus = [mainMenuTemplate];
   if (env.name !== "production") {
     menus.push(devMenuTemplate);
   }
@@ -34,8 +34,8 @@ app.on("ready", () => {
   setApplicationMenu();
 
   const mainWindow = createWindow("main", {
-    width: 1000,
-    height: 600
+    width: 450,
+    height: 650
   });
 
   mainWindow.loadURL(
@@ -47,7 +47,7 @@ app.on("ready", () => {
   );
 
   if (env.name === "development") {
-    mainWindow.openDevTools();
+    //mainWindow.openDevTools();
   }
 });
 
