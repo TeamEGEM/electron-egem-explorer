@@ -1,7 +1,7 @@
 {
-  "name": "electron-egem-dev-watch",
-  "productName": "EtherGem Dev Funds",
-  "description": "See the dev funds and watch balances.",
+  "name": "electron-egem-explorer",
+  "productName": "EtherGem Explorer",
+  "description": "See tx's and explore the egem blockchain.",
   "version": "0.0.1",
   "private": true,
   "author": "riddlez666 <ridz@egem.io>",
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "fs-jetpack": "^1.0.0",
+    "jquery": "^3.3.1",
     "web3": "^1.0.0-beta.33"
   },
   "devDependencies": {

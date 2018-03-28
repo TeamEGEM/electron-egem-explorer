@@ -17,6 +17,30 @@ function qBalance() {
     document.getElementById('balance').innerText = 'Balance: ' + uBalance;
 }
 
+function qTx() {
+    var x = document.querySelector('[name="txInput"]').value;
+    txObj = web3.eth.getTransaction(x);
+    data = JSON.stringify(txObj);
+    obj = JSON.parse(data);
+    document.getElementById("blockhash").innerHTML = obj.blockHash;
+    document.getElementById("gas").innerHTML = obj.gas;
+    document.getElementById("number").innerHTML = obj.blockNumber;
+    document.getElementById("nonce").innerHTML = obj.nonce;
+}
+
+function qBlock() {
+    var x = document.querySelector('[name="blockInput"]').value;
+    txObj = web3.eth.getBlock(x);
+    data = JSON.stringify(txObj);
+    obj = JSON.parse(data);
+    document.getElementById("hash").innerHTML = obj.hash;
+    document.getElementById("pHash").innerHTML = obj.parentHash;
+    document.getElementById("timestamp").innerHTML = obj.timestamp;
+    document.getElementById("miner").innerHTML = obj.miner;
+    document.getElementById("nonce").innerHTML = obj.nonce;
+    document.getElementById("size").innerHTML = obj.size;
+}
+
 function qDevsBalance() {
   var balance0 = web3.fromWei(web3.eth.getBalance("0x3fa6576610cac6c68e88ee68de07b104c9524fda"), "ether");
   var balance1 = web3.fromWei(web3.eth.getBalance("0xfc0f0a5F06cB00c9EB435127142ac79ac6F48B94"), "ether");

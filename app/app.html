@@ -2,11 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>EtherGem Dev Funds</title>
-  <script src="web3.min.js"></script>
-  <script src="EGEM.web3.js"></script>
+  <title>EtherGem Explorer</title>
 </head>
 <body>
+  <script>window.$ = window.jQuery = require('jquery');</script>
+  <script src="EGEM.jquery.js"></script>
+  <script src="web3.min.js"></script>
+  <script src="EGEM.web3.js"></script>
   <div class="container">
     </br>
     <img src="imgs/egemlogosmall.png"></img>
@@ -18,21 +20,48 @@
         <div id="bal2"><script type="text/javascript">document.write(balance2)</script></div>
         <div id="bal3"><script type="text/javascript">document.write(balance3)</script></div>
         </br>
+    Toggle: <input type="button" value="Query TX" id="test1"><input type="button" value="Query BLK" id="test2"><input type="button" value="Query BAL" id="test3"></br></br>
+    <div id="queryBlk">
         Current Block:<span class="title"><input type="button" value="Query" onClick="lBlock();">
           <div id="cBlock">
           <script type="text/javascript">document.write(cBlock)</script>
         </div>
         </span>
+        </br>
+        Block Search: <input type="text" name="blockInput">
+        <input type="button" value="Query" onClick="qBlock();">
+        </br>
+        <span class="title">Parent Hash: </span><div id="pHash"></div>
+        <span class="title">Block Hash: </span><div id="hash"></div>
+        <span class="title">Found By: </span><div id="miner"></div>
+        <span class="title">Timestamp: </span><div id="timestamp"></div>
+        <span class="title">Size: </span><div id="size"></div>
+        <span class="title">Nonce: </span><div id="nonce"></div>
+        </br>
+    </div>
+    <div id="queryTx">
+      Query Tx
+      <div id="txInput">
+        TX: <input type="text" name="txInput">
+        <input type="button" value="Query" onClick="qTx();">
         </br></br>
-      <h2>Query Balance</h2>
+        <span class="title">Block Hash: </span><div id="blockhash"></div>
+        <span class="title">Number: </span><div id="number"></div>
+        <span class="title">Gas: </span><div id="gas"></div>
+        <span class="title">Nonce: </span><div id="nonce"></div>
+        </br>
+      </div>
+    </div>
+    <div id="queryBal">
+      Query Balance
       <div id="addressInput">
         Address: <input type="text" name="addressInput">
         <input type="button" value="Query" onClick="qBalance();">
-        </br>
+        </br></br>
         <div id="balance"></div>
+        </br>
       </div>
-  </div>
-  <div class="container2">
+    </div>
 
   </div>
   <script src="app.js"></script>

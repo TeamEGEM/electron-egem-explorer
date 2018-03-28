@@ -27,3 +27,22 @@ a {
 .title {
   color: #8987DF;
 }
+
+#queryTx {
+  margin-left: auto;
+  margin-right: auto;
+  width:550px;
+  text-align: left;
+}
+#queryBal {
+  margin-left: auto;
+  margin-right: auto;
+  width:550px;
+  text-align: left;
+}
+#queryBlk {
+  margin-left: auto;
+  margin-right: auto;
+  width:550px;
+  text-align: left;
+}
