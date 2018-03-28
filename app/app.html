@@ -8,26 +8,32 @@
 </head>
 <body>
   <div class="container">
-    <img src="imgs/egemlogosmall.png"></img></br>
-    <span class="title">Dev Funds:</span></br></br>
-    <span class="title">Riddlez666:</span> <script type="text/javascript">document.write(balance0)</script></br>
-    <span class="title">MakeMoneyOz:</span> <script type="text/javascript">document.write(balance1)</script></br>
-    <span class="title">Osoese:</span> <script type="text/javascript">document.write(balance2)</script></br>
-    <span class="title">Jal3Inc:</span> <script type="text/javascript">document.write(balance3)</script>
-    </br></br></br>
-    Current Block:<span class="title"><script type="text/javascript">document.write(cBlock)</script></span>
-    </br></br>
-    <input type="button" value="Reload Data" onClick="window.location.reload()">
+    </br>
+    <img src="imgs/egemlogosmall.png"></img>
+        </br>
+        <span class="title">Dev Funds:</span>
+        <input type="button" value="Query" onClick="qDevsBalance()"></br></br>
+        <div id="bal0"><script type="text/javascript">document.write(balance0)</script></div>
+        <div id="bal1"><script type="text/javascript">document.write(balance1)</script></div>
+        <div id="bal2"><script type="text/javascript">document.write(balance2)</script></div>
+        <div id="bal3"><script type="text/javascript">document.write(balance3)</script></div>
+        </br>
+        Current Block:<span class="title"><input type="button" value="Query" onClick="lBlock();">
+          <div id="cBlock">
+          <script type="text/javascript">document.write(cBlock)</script>
+        </div>
+        </span>
+        </br></br>
+      <h2>Query Balance</h2>
+      <div id="addressInput">
+        Address: <input type="text" name="addressInput">
+        <input type="button" value="Query" onClick="qBalance();">
+        </br>
+        <div id="balance"></div>
+      </div>
   </div>
   <div class="container2">
-    <h1>Query Balance</h1>
-    <div id="addressInput">
-    Address: <input type="text" name="addressInput">
-    <button type="button" onClick="watchBalance();">Query</button>
-    <div></div>
-    </br>
-    <div id="balance"></div>
-    </div>
+
   </div>
   <script src="app.js"></script>
 </body>
