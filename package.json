@@ -1,12 +1,12 @@
 {
-  "name": "electron-boilerplate",
-  "productName": "Electron Boilerplate",
-  "description": "Starter for your Electron application",
-  "version": "0.0.0",
+  "name": "electron-block-explorer-egem",
+  "productName": "EGEM-Explorer",
+  "description": "Block explorer and more for EtherGem.",
+  "version": "0.0.1",
   "private": true,
-  "author": "Mr. Gumby <mr.gumby@example.com>",
-  "copyright": "© 2017, Gumby inc.",
-  "homepage": "http://example.com",
+  "author": "riddlez666 <ridz@egem.io>",
+  "copyright": "© 2018, Egem.io.",
+  "homepage": "http://egem.io",
   "main": "app/background.js",
   "build": {
     "appId": "com.example.electron-boilerplate",
@@ -31,7 +31,8 @@
     "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder"
   },
   "dependencies": {
-    "fs-jetpack": "^1.0.0"
+    "fs-jetpack": "^1.0.0",
+    "web3": "^1.0.0-beta.33"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.5",
