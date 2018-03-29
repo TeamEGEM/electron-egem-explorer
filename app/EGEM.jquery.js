@@ -4,17 +4,25 @@ $( document ).ready(function() {
     $("#queryTx").hide();
     $("#queryBal").hide();
     $("#queryBlk").hide();
+    $("#queryDev").hide();
 
-    $("#test1").click(function() {
+    $("#txQ").click(function() {
       console.log( "toggled!" );
       $("#queryTx").fadeToggle();
     });
-    $("#test2").click(function() {
+    $("#blkQ").click(function() {
       console.log( "toggled!" );
       $("#queryBlk").fadeToggle();
     });
-    $("#test3").click(function() {
+    $("#balQ").click(function() {
       console.log( "toggled!" );
       $("#queryBal").fadeToggle();
+    });
+    $("#devQ").click(function() {
+      console.log( "toggled!" );
+      $("#queryDev").fadeToggle();
+    });
+    $("#reloadApp").click(function() {
+      location.reload();
     });
 });

@@ -27,7 +27,9 @@ a {
 .title {
   color: #8987DF;
 }
-
+#innerContainer {
+  height: auto;
+}
 #queryTx {
   margin-left: auto;
   margin-right: auto;
@@ -45,4 +47,8 @@ a {
   margin-right: auto;
   width:550px;
   text-align: left;
+}
+#logo {
+  width: 50px;
+  height: 62px;
 }

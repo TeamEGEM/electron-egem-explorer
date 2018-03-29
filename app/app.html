@@ -11,16 +11,27 @@
   <script src="EGEM.web3.js"></script>
   <div class="container">
     </br>
-    <img src="imgs/egemlogosmall.png"></img>
-        </br>
+    <img id="logo" src="imgs/egemlogosmall.png"></img>
+    <h1>EtherGem Explorer</h1>
+    <div id="menu">
+        <input type="button" value="Query BLK" id="blkQ">
+        <input type="button" value="Query TX" id="txQ">
+        <input type="button" value="Query BAL" id="balQ">
+        <input type="button" value="Dev Funds" id="devQ">
+        <input type="button" value="Reload" id="reloadApp">
+        </br></br>
+    </div>
+    <div id="innerContainer">
+    <div id="queryDev">
         <span class="title">Dev Funds:</span>
-        <input type="button" value="Query" onClick="qDevsBalance()"></br></br>
+        <input type="button" value="Query" onClick="qDevsBalance()">
+        </br></br>
         <div id="bal0"><script type="text/javascript">document.write(balance0)</script></div>
         <div id="bal1"><script type="text/javascript">document.write(balance1)</script></div>
         <div id="bal2"><script type="text/javascript">document.write(balance2)</script></div>
         <div id="bal3"><script type="text/javascript">document.write(balance3)</script></div>
         </br>
-    Toggle: <input type="button" value="Query TX" id="test1"><input type="button" value="Query BLK" id="test2"><input type="button" value="Query BAL" id="test3"></br></br>
+    </div>
     <div id="queryBlk">
         Current Block:<span class="title"><input type="button" value="Query" onClick="lBlock();">
           <div id="cBlock">
@@ -30,7 +41,7 @@
         </br>
         Block Search: <input type="text" name="blockInput">
         <input type="button" value="Query" onClick="qBlock();">
-        </br>
+        </br></br>
         <span class="title">Parent Hash: </span><div id="pHash"></div>
         <span class="title">Block Hash: </span><div id="hash"></div>
         <span class="title">Found By: </span><div id="miner"></div>
@@ -62,7 +73,10 @@
         </br>
       </div>
     </div>
-
+  </div>
+  <div id="footer">
+    Light Blockchain Explorer | © 2018, Egem.io
+  </div>
   </div>
   <script src="app.js"></script>
 </body>
