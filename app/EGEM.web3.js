@@ -22,27 +22,39 @@ function qTx() {
     txObj = web3.eth.getTransaction(x);
     data = JSON.stringify(txObj);
     obj = JSON.parse(data);
+    document.getElementById("txfrom").innerHTML = obj.from;
+    document.getElementById("txto").innerHTML = obj.to;
     document.getElementById("blockhash").innerHTML = obj.blockHash;
     document.getElementById("gas").innerHTML = obj.gas;
     document.getElementById("number").innerHTML = obj.blockNumber;
-    document.getElementById("nonce").innerHTML = obj.nonce;
+    document.getElementById("value").innerHTML = obj.value;
+    document.getElementById("input").innerHTML = obj.input;
 }
 
 function qBlock() {
-    var x = document.querySelector('[name="blockInput"]').value;
-    txObj = web3.eth.getBlock(x);
-    blkTxs = web3.eth.getBlockTransactionCount(x);
-    blkUnc = web3.eth.getBlockUncleCount(x);
+    var input = document.querySelector('[name="blockInput"]').value;
+    txObj = web3.eth.getBlock(input);
+    blkTxs = web3.eth.getBlockTransactionCount(input);
+    blkUnc = web3.eth.getBlockUncleCount(input);
     data = JSON.stringify(txObj);
     obj = JSON.parse(data);
+    var tData = obj.timestamp*1000;
+    var dateTimeString = moment(obj.tData).format("DD-MM-YYYY HH:mm:ss");
     document.getElementById("hash").innerHTML = obj.hash;
     document.getElementById("pHash").innerHTML = obj.parentHash;
-    document.getElementById("timestamp").innerHTML = obj.timestamp;
+    document.getElementById("timestamp").innerHTML = dateTimeString;
     document.getElementById("miner").innerHTML = obj.miner;
     document.getElementById("nonce").innerHTML = obj.nonce;
     document.getElementById("size").innerHTML = obj.size;
     document.getElementById("btransactions").innerHTML = blkTxs;
+    document.getElementById("ltransactions").innerHTML = obj.transactions;
     document.getElementById("buncles").innerHTML = blkUnc;
+
+    var i, x = "";
+    for (i in obj.transactions) {
+        x += obj.transactions[i] + "<br>";
+    }
+    document.getElementById("ltransactions").innerHTML = x;
 }
 
 function qDevsBalance() {

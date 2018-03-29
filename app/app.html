@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>EtherGem Desktop Explorer</title>
+  <script>window.$ = window.moment = require('moment');</script>
   <script>window.$ = window.jQuery = require('jquery');</script>
   <script src="web3.min.js"></script>
   <script src="EGEM.jquery.js"></script>
@@ -44,8 +45,7 @@
         </div>
         </span>
         </br>
-        Block Search: <input type="text" name="blockInput" value="Enter a number">
-        <input type="button" value="Query" onClick="qBlock();">
+        Block Search: <input type="text" name="blockInput" value=" Input a block number." onClick="this.select();" style="width:400px;"><input type="button" value="Query" onClick="qBlock();">
         </br></br>
         <span class="title">Parent Hash: </span><div id="pHash"></div>
         <span class="title">Block Hash: </span><div id="hash"></div>
@@ -57,19 +57,24 @@
         </br>
         <span class="title">Transactions In Block: </span><div id="btransactions"></div>
         </br>
+        <span class="title">Transactions Hash List: </br></br></span><div id="ltransactions"></div>
+        </br>
         </br>
     </div>
     <div id="queryTx" class="queryTextBlock">
       Query Tx
       </br></br>
       <div id="txInput">
-        TX: <input type="text" name="txInput">
+        TX: <input type="text" name="txInput" value=" Input a tx hash." onClick="this.select();" style="width:450px;">
         <input type="button" value="Query" onClick="qTx();">
         </br></br>
+        <span class="title">From: </span><div id="txfrom"></div>
+        <span class="title">To: </span><div id="txto"></div>
         <span class="title">Block Hash: </span><div id="blockhash"></div>
-        <span class="title">Number: </span><div id="number"></div>
+        <span class="title">Mined In Block: </span><div id="number"></div>
         <span class="title">Gas: </span><div id="gas"></div>
-        <span class="title">Nonce: </span><div id="nonce"></div>
+        <span class="title">Value: </span><div id="value"></div>
+        <span class="title">Input: </span><div id="input"></div>
         </br>
         </br>
       </div>
@@ -77,7 +82,7 @@
     <div id="queryBal" class="queryTextBlock">
       Query Balance</br></br>
       <div id="addressInput">
-        Address: <input type="text" name="addressInput">
+        Address: <input type="text" name="addressInput" value=" Input a address." onClick="this.select();" style="width:425px;">
         <input type="button" value="Query" onClick="qBalance();">
         </br></br>
         <span class="title">Balance: </span><div id="balance"></div>
