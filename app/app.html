@@ -2,34 +2,38 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>EtherGem Explorer</title>
+  <title>EtherGem Desktop Explorer</title>
+  <script>window.$ = window.jQuery = require('jquery');</script>
+  <script src="web3.min.js"></script>
+  <script src="EGEM.jquery.js"></script>
+  <script src="EGEM.web3.js"></script>
 </head>
 <body>
-  <script>window.$ = window.jQuery = require('jquery');</script>
-  <script src="EGEM.jquery.js"></script>
-  <script src="web3.min.js"></script>
-  <script src="EGEM.web3.js"></script>
   <div class="container">
     </br>
     <img id="logo" src="imgs/egemlogosmall.png"></img>
-    <h1>EtherGem Explorer</h1>
+    <h1>EtherGem Desktop Explorer</h1>
     <div id="menu">
-        <input type="button" value="Query BLK" id="blkQ">
-        <input type="button" value="Query TX" id="txQ">
-        <input type="button" value="Query BAL" id="balQ">
-        <input type="button" value="Dev Funds" id="devQ">
-        <input type="button" value="Reload" id="reloadApp">
-        </br></br>
+        <div class="egem-btn" id="blkQ">BLOCK</div>
+        <div class="egem-btn" id="txQ">TX</div>
+        <div class="egem-btn" id="balQ">BAL</div>
+        <div class="egem-btn" id="devQ">INFO</div>
+        <div class="egem-btn" id="reloadApp">RELOAD</div>
+        </br></br></br>
     </div>
     <div id="innerContainer">
     <div id="queryDev">
         <span class="title">Dev Funds:</span>
-        <input type="button" value="Query" onClick="qDevsBalance()">
         </br></br>
-        <div id="bal0"><script type="text/javascript">document.write(balance0)</script></div>
-        <div id="bal1"><script type="text/javascript">document.write(balance1)</script></div>
-        <div id="bal2"><script type="text/javascript">document.write(balance2)</script></div>
-        <div id="bal3"><script type="text/javascript">document.write(balance3)</script></div>
+        <div id="devStyle">
+        <span class="title">0x3fa6576610cac6c68e88ee68de07b104c9524fda</span><div id="bal0"><script type="text/javascript">document.write(balance0)</script></div>
+        <span class="title">0xfc0f0a5F06cB00c9EB435127142ac79ac6F48B94</span><div id="bal1"><script type="text/javascript">document.write(balance1)</script></div>
+        <span class="title">0x0666bf13ab1902de7dee4f8193c819118d7e21a6</span><div id="bal2"><script type="text/javascript">document.write(balance2)</script></div>
+        <span class="title">0xcEf0890408b4FC0DC025c8F581c77383529D38B6</span><div id="bal3"><script type="text/javascript">document.write(balance3)</script></div>
+        </div>
+        </br>
+        <input type="button" value="Query" onClick="qDevsBalance()">
+        </br>
         </br>
     </div>
     <div id="queryBlk">
@@ -69,7 +73,17 @@
         Address: <input type="text" name="addressInput">
         <input type="button" value="Query" onClick="qBalance();">
         </br></br>
-        <div id="balance"></div>
+        <span class="title">Balance: </span><div id="balance"></div>
+        </br>
+      </div>
+    </div>
+    <div id="queryPool">
+      Query Miners
+      <div id="addressInput">
+        <input type="button" value="Query" onClick="" id="listMiners">
+        </br></br>
+        <span class="title">Hashrate: </span><div id="hashrate"></div>
+        <span class="title">Miner: </span><div id="miners"></div>
         </br>
       </div>
     </div>

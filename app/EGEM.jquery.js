@@ -1,10 +1,12 @@
 // A $( document ).ready() block.
+$(".container").hide();
 $( document ).ready(function() {
     console.log( "ready!" );
+
     $("#queryTx").hide();
     $("#queryBal").hide();
-    $("#queryBlk").hide();
     $("#queryDev").hide();
+    $("#queryPool").hide();
 
     $("#txQ").click(function() {
       console.log( "toggled!" );
@@ -22,7 +24,12 @@ $( document ).ready(function() {
       console.log( "toggled!" );
       $("#queryDev").fadeToggle();
     });
+    $("#qPool").click(function() {
+      console.log( "toggled!" );
+      $("#queryPool").fadeToggle();
+    });
     $("#reloadApp").click(function() {
       location.reload();
     });
+
 });
