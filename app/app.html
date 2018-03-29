@@ -43,7 +43,7 @@
         </div>
         </span>
         </br>
-        Block Search: <input type="text" name="blockInput">
+        Block Search: <input type="text" name="blockInput" value="Enter a number">
         <input type="button" value="Query" onClick="qBlock();">
         </br></br>
         <span class="title">Parent Hash: </span><div id="pHash"></div>
@@ -52,6 +52,9 @@
         <span class="title">Timestamp: </span><div id="timestamp"></div>
         <span class="title">Size: </span><div id="size"></div>
         <span class="title">Nonce: </span><div id="nonce"></div>
+        <span class="title">Uncles: </span><div id="buncles"></div>
+        </br>
+        <span class="title">Transactions In Block: </span><div id="btransactions"></div>
         </br>
     </div>
     <div id="queryTx">
@@ -68,7 +71,7 @@
       </div>
     </div>
     <div id="queryBal">
-      Query Balance
+      Query Balance</br></br>
       <div id="addressInput">
         Address: <input type="text" name="addressInput">
         <input type="button" value="Query" onClick="qBalance();">

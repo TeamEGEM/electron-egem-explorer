@@ -31,6 +31,8 @@ function qTx() {
 function qBlock() {
     var x = document.querySelector('[name="blockInput"]').value;
     txObj = web3.eth.getBlock(x);
+    blkTxs = web3.eth.getBlockTransactionCount(x);
+    blkUnc = web3.eth.getBlockUncleCount(x);
     data = JSON.stringify(txObj);
     obj = JSON.parse(data);
     document.getElementById("hash").innerHTML = obj.hash;
@@ -39,6 +41,8 @@ function qBlock() {
     document.getElementById("miner").innerHTML = obj.miner;
     document.getElementById("nonce").innerHTML = obj.nonce;
     document.getElementById("size").innerHTML = obj.size;
+    document.getElementById("btransactions").innerHTML = blkTxs;
+    document.getElementById("buncles").innerHTML = blkUnc;
 }
 
 function qDevsBalance() {

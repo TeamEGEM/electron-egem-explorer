@@ -5,6 +5,7 @@ $( document ).ready(function() {
 
     $("#queryTx").hide();
     $("#queryBal").hide();
+    $("#queryBlk").hide();
     $("#queryDev").hide();
     $("#queryPool").hide();
 
