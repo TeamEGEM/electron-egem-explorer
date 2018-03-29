@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>EtherGem Desktop Explorer</title>
+  <title>EtherGem Explorer</title>
   <script>window.$ = window.moment = require('moment');</script>
   <script>window.$ = window.jQuery = require('jquery');</script>
   <script src="web3.min.js"></script>
@@ -15,45 +15,45 @@
 <body>
   <div class="container">
     </br>
-    <a href="app.html"><img id="logo" src="imgs/egemlogosmall.png"></img></a>
-    <h1>EtherGem Desktop Explorer</h1>
+    <a href="app.html"><img id="logo" src="imgs/egemlogosmall.png" title="Click me to refesh explorer."></img></a>
+    <h2>EtherGem Explorer</h2>
     <div id="menu">
-        <div class="egem-btn" id="blkQ">BLOCK</div>
-        <div class="egem-btn" id="txQ">TX</div>
-        <div class="egem-btn" id="balQ">BAL</div>
-        <div class="egem-btn" id="devQ">INFO</div>
-        <div class="egem-btn" id="poolQ">POOL</div>
+        <div class="egem-btn" id="blkQ" title="Explore a specific block on the chain.">BLOCK</div>
+        <div class="egem-btn" id="txQ" title="See if a transaction has been mined and its info.">TX</div>
+        <div class="egem-btn" id="balQ" title="Find out the balance and more here.">BAL</div>
+        <div class="egem-btn" id="devQ" title="Check out the current fund balances.">INFO</div>
+        <div class="egem-btn" id="poolQ" title="View dev pool status.">POOL</div>
         </br></br></br>
     </div>
     <div id="innerContainer">
     <div id="queryDev" class="queryTextBlock">
         <div id="devStyle">
-        Dev Funds: <input type="button" value="Query" onClick="qDevsBalance()">
+        Dev Funds: </br></br>
+        <input type="button" value="Query" onClick="qDevsBalance()" class="egem-btn">
         </br></br>
-        <span class="title">0x3fa6576610cac6c68e88ee68de07b104c9524fda</span><div id="bal0"><script type="text/javascript">document.write(balance0)</script></div>
-        <span class="title">0xfc0f0a5F06cB00c9EB435127142ac79ac6F48B94</span><div id="bal1"><script type="text/javascript">document.write(balance1)</script></div>
-        <span class="title">0x0666bf13ab1902de7dee4f8193c819118d7e21a6</span><div id="bal2"><script type="text/javascript">document.write(balance2)</script></div>
-        <span class="title">0xcEf0890408b4FC0DC025c8F581c77383529D38B6</span><div id="bal3"><script type="text/javascript">document.write(balance3)</script></div>
+        <span class="title">0x3fa6576610cac6c68e88ee68de07b104c9524fda - </span><span id="bal0"><script type="text/javascript">document.write(balance0)</script></span></br></br>
+        <span class="title">0xfc0f0a5F06cB00c9EB435127142ac79ac6F48B94 - </span><span id="bal1"><script type="text/javascript">document.write(balance1)</script></span></br></br>
+        <span class="title">0x0666bf13ab1902de7dee4f8193c819118d7e21a6 - </span><span id="bal2"><script type="text/javascript">document.write(balance2)</script></span></br></br>
+        <span class="title">0xcEf0890408b4FC0DC025c8F581c77383529D38B6 - </span><span id="bal3"><script type="text/javascript">document.write(balance3)</script></span></br>
         </div>
-        </br>
         </br>
     </div>
     <div id="queryBlk" class="queryTextBlock">
-        Current Block:<span class="title"><input type="button" value="Query" onClick="lBlock();">
-          <div id="cBlock">
+        <span class="title">Current Block:</span>
+        <span id="cBlock">
           <script type="text/javascript">document.write(cBlock)</script>
-        </div>
-        </span>
-        </br>
-        Block Search: <input type="text" name="blockInput" value=" Input a block number." onClick="this.select();" style="width:400px;"><input type="button" value="Query" onClick="qBlock();">
+        </span></br>
+        <input type="button" value="Refresh" onClick="lBlock();" class="egem-btn">
         </br></br>
-        <span class="title">Parent Hash: </span><div id="pHash"></div>
-        <span class="title">Block Hash: </span><div id="hash"></div>
-        <span class="title">Found By: </span><div id="miner"></div>
-        <span class="title">Timestamp: </span><div id="timestamp"></div>
-        <span class="title">Size: </span><div id="size"></div>
-        <span class="title">Nonce: </span><div id="nonce"></div>
-        <span class="title">Uncles: </span><div id="buncles"></div>
+        Block Search: <input type="text" name="blockInput" value=" Input block number." onClick="this.select();" style="width:400px;"><input type="button" value="Query" onClick="qBlock();" class="egem-btn">
+        </br></br>
+        <span class="title">Parent Hash: </span><span id="pHash"></span></br>
+        <span class="title">Block Hash: </span><span id="hash"></span></br>
+        <span class="title">Found By: </span><span id="miner"></span></br>
+        <span class="title">Timestamp: </span><span id="timestamp"></span></br>
+        <span class="title">Size: </span><span id="size"></span></br>
+        <span class="title">Nonce: </span><span id="nonce"></span></br>
+        <span class="title">Uncles: </span><span id="buncles"></span></br>
         </br>
         <span class="title">Transactions In Block: </span><div id="btransactions"></div>
         </br>
@@ -65,8 +65,8 @@
       Query Tx
       </br></br>
       <div id="txInput">
-        TX: <input type="text" name="txInput" value=" Input a tx hash." onClick="this.select();" style="width:450px;">
-        <input type="button" value="Query" onClick="qTx();">
+        TX: <input type="text" name="txInput" value=" Input tx hash." onClick="this.select();" style="width:450px;"></br></br>
+        <input type="button" value="Query" onClick="qTx();" class="egem-btn">
         </br></br>
         <span class="title">From: </span><div id="txfrom"></div>
         <span class="title">To: </span><div id="txto"></div>
@@ -82,16 +82,17 @@
     <div id="queryBal" class="queryTextBlock">
       Query Balance</br></br>
       <div id="addressInput">
-        Address: <input type="text" name="addressInput" value=" Input a address." onClick="this.select();" style="width:425px;">
-        <input type="button" value="Query" onClick="qBalance();">
+        Address: <input type="text" name="addressInput" value=" Input address." onClick="this.select();" style="width:425px;"></br></br>
+        <input type="button" value="Query" onClick="qBalance();" class="egem-btn">
         </br></br>
         <span class="title">Balance: </span><div id="balance"></div>
+        <span class="title">Transactions: </span><div id="gTransCount"></div>
         </br>
       </div>
     </div>
     <div id="queryPool" class="queryTextBlock">
-      Dev Pool Status:
-      <input type="button" value="Query" onClick="sHashrate()" id="">
+      Dev Pool Status:</br></br>
+      <input type="button" value="Query" onClick="sHashrate()" id="" class="egem-btn">
       <div id="">
         </br>
         <span class="title">Hashrate: </span><div id="hashrate"></div>
@@ -102,9 +103,9 @@
       </div>
     </div>
     </div>
+  </div>
   <div id="footer">
     Light Blockchain Explorer | © 2018, Egem.io</br></br>
-  </div>
   </div>
   <script src="app.js"></script>
 </body>

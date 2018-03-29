@@ -9,6 +9,9 @@ $( document ).ready(function() {
     $("#queryDev").hide();
     $("#queryPool").hide();
 
+    $("#logo").hide();
+    $("#logo").fadeIn( 3000 ).fadeOut( 1500 ).fadeIn( 3000 );
+
     $("#txQ").click(function() {
       console.log( "toggled!" );
       $("#queryTx").slideToggle();

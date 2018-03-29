@@ -13,8 +13,10 @@ var balance3 = web3.fromWei(web3.eth.getBalance("0xcEf0890408b4FC0DC025c8F581c77
 
 function qBalance() {
     var x = document.querySelector('[name="addressInput"]').value;
+    var tCount = web3.eth.getTransactionCount(x);
     var uBalance = web3.fromWei(web3.eth.getBalance(x), "ether");
     document.getElementById('balance').innerText = uBalance;
+    document.getElementById('gTransCount').innerText = tCount;
 }
 
 function qTx() {
@@ -31,6 +33,7 @@ function qTx() {
     document.getElementById("input").innerHTML = obj.input;
 }
 
+
 function qBlock() {
     var input = document.querySelector('[name="blockInput"]').value;
     txObj = web3.eth.getBlock(input);
@@ -38,17 +41,17 @@ function qBlock() {
     blkUnc = web3.eth.getBlockUncleCount(input);
     data = JSON.stringify(txObj);
     obj = JSON.parse(data);
-    var tData = obj.timestamp*1000;
-    var dateTimeString = moment(obj.tData).format("DD-MM-YYYY HH:mm:ss");
+    var dateTimeString = obj.timestamp;
+    var dt = new Date(dateTimeString*1000);
     document.getElementById("hash").innerHTML = obj.hash;
     document.getElementById("pHash").innerHTML = obj.parentHash;
-    document.getElementById("timestamp").innerHTML = dateTimeString;
     document.getElementById("miner").innerHTML = obj.miner;
     document.getElementById("nonce").innerHTML = obj.nonce;
     document.getElementById("size").innerHTML = obj.size;
     document.getElementById("btransactions").innerHTML = blkTxs;
     document.getElementById("ltransactions").innerHTML = obj.transactions;
     document.getElementById("buncles").innerHTML = blkUnc;
+    document.getElementById("timestamp").innerHTML = dt.getHours() + '/' + dt.getMinutes() + '/' + dt.getSeconds() + ' -- ' + dt;
 
     var i, x = "";
     for (i in obj.transactions) {
