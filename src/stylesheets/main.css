@@ -11,7 +11,7 @@ body {
   align-items: center;
   font-family: sans-serif;
   color: #42c5f4;
-  background-color: #000;
+  background-color: #FFF;
 }
 
 a {
@@ -20,7 +20,24 @@ a {
 }
 
 .container {
+  background-color: #FBFCFC;
+  margin-top: 25px;
   text-align: center;
+  width:600px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: 1px solid rgba(0,150,255,0.91);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font: normal 14px/1 "Times New Roman", Times, serif;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-box-shadow: 3px 3px 18px 3px rgba(123,0,255,0.91) ;
+  box-shadow: 3px 3px 18px 3px rgba(123,0,255,0.91) ;
 }
 .container2 {
   padding-left: 60px;
@@ -43,19 +60,8 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
-#queryTx {
-  margin-left: auto;
-  margin-right: auto;
-  width:550px;
-  text-align: left;
-}
-#queryBal {
-  margin-left: auto;
-  margin-right: auto;
-  width:550px;
-  text-align: left;
-}
-#queryBlk {
+
+.queryTextBlock {
   margin-left: auto;
   margin-right: auto;
   width:550px;

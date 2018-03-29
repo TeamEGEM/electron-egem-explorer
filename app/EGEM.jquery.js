@@ -11,24 +11,29 @@ $( document ).ready(function() {
 
     $("#txQ").click(function() {
       console.log( "toggled!" );
-      $("#queryTx").fadeToggle();
+      $("#queryTx").slideToggle();
     });
+
     $("#blkQ").click(function() {
       console.log( "toggled!" );
-      $("#queryBlk").fadeToggle();
+      $("#queryBlk").slideToggle();
     });
+
     $("#balQ").click(function() {
       console.log( "toggled!" );
-      $("#queryBal").fadeToggle();
+      $("#queryBal").slideToggle();
     });
+
     $("#devQ").click(function() {
       console.log( "toggled!" );
-      $("#queryDev").fadeToggle();
+      $("#queryDev").slideToggle();
     });
-    $("#qPool").click(function() {
+
+    $("#poolQ").click(function() {
       console.log( "toggled!" );
-      $("#queryPool").fadeToggle();
+      $("#queryPool").slideToggle();
     });
+
     $("#reloadApp").click(function() {
       location.reload();
     });

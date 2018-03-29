@@ -61,11 +61,23 @@ function lBlock() {
        document.getElementById("cBlock").innerText = cBlock;
 }
 
-//var minerData = $.getJSON('https://pool.egem.io/api/miners';
-
-// function listMiners() {
-//
-//       data = JSON.stringify('https://pool.egem.io/api/miners');
-//       obj = JSON.parse(data);
-//       document.getElementById("hashrate").innerHTML = data.miners;
-// }
+function sHashrate() {
+      fetch('https://pool.egem.io/api/miners')
+          .then(response => response.json())
+          .then(data => {
+              document.getElementById("hashrate").innerHTML = data.hashrate;
+          })
+          .catch(err => {
+              console.error('An error ocurred', err);
+          });
+      fetch('https://pool.egem.io/api/stats')
+          .then(response => response.json())
+          .then(data => {
+              document.getElementById("miners").innerHTML = data.minersTotal;
+              document.getElementById("minedBlocks").innerHTML = data.maturedTotal;
+              document.getElementById("newBlocks").innerHTML = data.candidatesTotal;
+          })
+          .catch(err => {
+              console.error('An error ocurred', err);
+          });
+}
