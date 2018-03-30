@@ -1,5 +1,4 @@
 // A $( document ).ready() block.
-$(".container").hide();
 $( document ).ready(function() {
     console.log( "ready!" );
 
