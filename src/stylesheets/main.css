@@ -45,6 +45,15 @@ a {
 .title {
   color: #8987DF;
 }
+#contentBox {
+  -webkit-box-shadow: inset 11px 11px 21px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 11px 11px 21px -9px rgba(0,0,0,0.75);
+  box-shadow: inset 11px 11px 21px -9px rgba(0,0,0,0.75);
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 15px;
+  margin: 15px;
+}
 #innerContainer {
   height: auto;
 }
@@ -71,6 +80,10 @@ a {
 #logo {
   width: 42px;
   height: 62px;
+}
+
+#twitter {
+
 }
 
 #footer {
@@ -116,4 +129,72 @@ a {
   margin: 5px 0 10px;
   -webkit-box-shadow: 0 1px 10px 1px rgb(92,139,238) inset, 0 1px 0 0 rgb(29,44,77) , 0 2px 0 0 rgb(31,48,83) , 0 4px 3px 0 rgb(17,17,17) ;
   box-shadow: 0 1px 10px 1px rgb(92,139,238) inset, 0 1px 0 0 rgb(29,44,77) , 0 2px 0 0 rgb(31,48,83) , 0 4px 3px 0 rgb(17,17,17) ;
+}
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700);
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('https://s.cdpn.io/9674/icomoon.eot');
+  src:url('https://s.cdpn.io/9674/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('https://s.cdpn.io/9674/icomoon.woff') format('woff'),
+    url('https://s.cdpn.io/9674/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+button {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  color:white;
+  display:block;
+  font-size:1.5em;
+  width:100%;
+  height:100%;
+  line-height:2em;
+  border-radius:50%;
+  border: 1px solid blue;
+}
+
+button,
+li {
+  border-radius: 50%;
+  text-align: center;
+  width: 2em;
+  height: 2em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: .2s linear;
+}
+
+button {
+  background-color: #42c5f4;
+  z-index: 5;
+  cursor: pointer;
+  font-size:1em;
+}
+
+li.slideout:nth-child(1) {
+  -webkit-transform: translateY(-10em);
+  transform: translateY(-10em)
+}
+
+li.slideout:nth-child(2) {
+  -webkit-transform: translateY(-8.6602540378em) translateX(5em);
+  transform: translateY(-8.6602540378em) translateX(5em)
+}
+
+li.slideout:nth-child(3) {
+  -webkit-transform: translateY(-5em) translateX(8.6602540378em);
+  transform: translateY(-5em) translateX(8.6602540378em)
+}
+
+li.slideout:nth-child(4) {
+  -webkit-transform: translateX(10em);
+  transform: translateX(10em)
 }

@@ -5,27 +5,30 @@
   <title>EtherGem Explorer</title>
   <script>window.$ = window.moment = require('moment');</script>
   <script>window.$ = window.jQuery = require('jquery');</script>
-  <script src="web3.min.js"></script>
-  <script src="EGEM.jquery.js"></script>
-  <script src="EGEM.web3.js"></script>
+  <script src="js/web3/web3.min.js"></script>
+  <script src="js/func/buttons.jq.js"></script>
+  <script src="js/web3/egem.w3.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
+
     </br>
     <a href="app.html"><img id="logo" src="imgs/egemlogosmall.png" title="Click me to refesh explorer."></img></a>
     <h2>EtherGem Explorer</h2>
     <div id="menu">
-        <div class="egem-btn" id="blkQ" title="Explore a specific block on the chain.">BLOCK</div>
-        <div class="egem-btn" id="txQ" title="See if a transaction has been mined and its info.">TX</div>
-        <div class="egem-btn" id="balQ" title="Find out the balance and more here.">BAL</div>
-        <div class="egem-btn" id="devQ" title="Check out the current fund balances.">INFO</div>
-        <div class="egem-btn" id="poolQ" title="View dev pool status.">POOL</div>
+        <div class="egem-btn" id="blkQ" title="Explore a specific block on the chain."><i class="fab fa-cloudversify"></i> BLOCK</div>
+        <div class="egem-btn" id="txQ" title="See if a transaction has been mined and its info."><i class="fas fa-microchip fa-fw"></i> TX</div>
+        <div class="egem-btn" id="balQ" title="Find out the balance and more here."><i class="fas fa-dollar-sign fa-fw"></i> BAL</div>
+        <div class="egem-btn" id="devQ" title="Check out the current fund balances."><i class="fas fa-home fa-fw"></i> FUNDS</div>
+        <div class="egem-btn" id="poolQ" title="View dev pool status."><i class="fas fa-adjust fa-fw"></i> POOL</div>
         <hr>
         </br></br></br>
     </div>
+    <div id="contentBox">
     <div id="innerContainer">
     <div id="queryDev" class="queryTextBlock">
         <div id="devStyle">
@@ -44,7 +47,7 @@
         <span id="cBlock"><script type="text/javascript">document.write(cBlock)</script></span></br>
         <input type="button" value="Refresh" onClick="lBlock();" class="egem-btn">
         </br></br>
-        Block Search: <input type="text" name="blockInput" value=" Input block number." onClick="this.select();" style="width:400px;"><input type="button" value="Query" onClick="qBlock();" class="egem-btn">
+        Block Search: <input type="text" name="blockInput" id="blockInput2" value=" Input block number." onClick="this.select();" style="width:400px;"><input type="button" value="Query" onClick="qBlock();" class="egem-btn">
         </br></br>
         <span class="title">Parent Hash: </span><span id="pHash"></span></br>
         <span class="title">Block Hash: </span><span id="hash"></span></br>
@@ -64,7 +67,7 @@
       Query Tx
       </br></br>
       <div id="txInput">
-        TX: <input type="text" name="txInput" value=" Input tx hash." onClick="this.select();" style="width:450px;"></br></br>
+        TX: <input type="text" name="txInput" id="txInput2"value=" Input tx hash." onClick="this.select();" style="width:450px;"></br></br>
         <input type="button" value="Query" onClick="qTx();" class="egem-btn">
         </br></br>
         <span class="title">From: </span><div id="txfrom"></div>
@@ -91,22 +94,36 @@
     </div>
     <div id="queryPool" class="queryTextBlock">
       Dev Pool Status:</br></br>
-      <input type="button" value="Query" onClick="sHashrate()" id="" class="egem-btn">
+      <input type="button" value="Query" onClick="sHashrate()" id="" class="egem-btn"><input type="button" value="Total" onClick="totalEstHash()" id="" class="egem-btn">
       <div id="">
         </br>
         <span class="title">Hashrate: </span><div id="hashrate"></div>
         <span class="title">Miners: </span><div id="miners"></div>
         <span class="title">Mined Blocks: </span><div id="minedBlocks"></div>
         <span class="title">New Blocks: </span><div id="newBlocks"></div>
+        </br></br></br>
+        <span class="title">Total Est Network Power: </span><div id="totalHashrate"></div>
         </br>
       </div>
     </div>
     </div>
+
+  </div>
   <hr>
   </div>
+
   <div id="footer">
     Light Blockchain Explorer | © 2018, Egem.io</br></br>
   </div>
+  <div class="share-buttons cn-wrapper">
+  <ul>
+    <li id="twitter"><a href="#"><span aria-hidden="true" class=""></span></a><i class="fab fa-github fa-2x"></i></li>
+    <li><a href="#"><span aria-hidden="true" class=""></span></a><i class="fab fa-github fa-2x"></i></li>
+    <li><a href="#"><span aria-hidden="true" class=""></span></a><i class="fab fa-github fa-2x"></i></li>
+    <li><a href="#"><span aria-hidden="true" class=""></span></a><i class="fab fa-reddit fa-2x"></i></li>
+  </ul>
+   <button class="trigger"><span aria-hidden="true" class=""></span><i class="fas fa-user-secret"></i></button>
+</div>
   <script src="app.js"></script>
 </body>
 </html>

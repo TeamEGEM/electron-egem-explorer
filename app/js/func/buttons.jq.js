@@ -1,3 +1,4 @@
+const {shell} = require('electron')
 // A $( document ).ready() block.
 $( document ).ready(function() {
     console.log( "ready!" );
@@ -36,8 +37,18 @@ $( document ).ready(function() {
       $("#queryPool").slideToggle();
     });
 
+    $("#twitter").click(function() {
+      console.log( "toggled!" );
+      shell.openExternal('https://twitter.com')
+    });
+
     $("#reloadApp").click(function() {
       location.reload();
+    });
+
+    /* jQuery */
+    $('.trigger').on('click', function(){
+      $('.cn-wrapper li').toggleClass('slideout');
     });
 
 });
